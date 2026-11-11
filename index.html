@@ -1,214 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GC PhytoEnto Sensing &amp; AI Lab | University of Tennessee, Knoxville</title>
-<meta name="description" content="The GC PhytoEnto Sensing & AI Lab at the University of Tennessee, Knoxville develops intelligent sensing and AI for early detection of plant diseases, crop stress, and insect pests.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #ffffff;
-    --text: #1f2328;
-    --muted: #58595b;          /* UT Smokey */
-    --accent: #ff8200;         /* UT Orange */
-    --accent-text: #b85c00;    /* darker orange for readable links */
-    --rule: #e4e4e2;
-    --soft: #f6f6f4;
-    color-scheme: light;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #17181a;
-      --text: #ececea;
-      --muted: #a9aaad;
-      --accent: #ff8200;
-      --accent-text: #ffa04d;
-      --rule: #2e3033;
-      --soft: #202225;
-      color-scheme: dark;
-    }
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: "Public Sans", "Helvetica Neue", Arial, sans-serif;
-    font-size: 17px;
-    line-height: 1.65;
-  }
-  a { color: var(--accent-text); }
-  a:focus-visible, .nav a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
-  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
-
-  /* Navigation */
-  .nav { border-bottom: 1px solid var(--rule); position: sticky; top: 0; background: var(--bg); z-index: 10; }
-  .nav .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding-top: 14px; padding-bottom: 14px; }
-  .brand { font-weight: 800; color: var(--text); text-decoration: none; }
-  .nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0; padding: 0; }
-  .nav ul a { color: var(--muted); text-decoration: none; font-size: 15px; }
-  .nav ul a:hover { color: var(--text); }
-
-  /* Hero */
-  .hero { padding: 72px 0 40px; }
-  .hero h1 { font-size: clamp(34px, 6vw, 54px); line-height: 1.08; font-weight: 800; margin: 0 0 16px; letter-spacing: -0.01em; }
-  .hero p.lead { font-size: 20px; color: var(--muted); max-width: 640px; margin: 0; }
-
-  /* The one bold element: a hyperspectral wavelength strip */
-  .spectrum { margin: 44px 0 8px; }
-  .band {
-    height: 26px; border-radius: 3px;
-    background: linear-gradient(90deg,
-      #6a00c8 0%, #2a3cff 10%, #00a2ff 20%, #00c86e 31%, #b5e300 40%,
-      #ffd400 46%, #ff8200 52%, #e8231b 58%, #8e0b16 66%, #4a0610 78%, #22030a 100%);
-  }
-  .ticks { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-top: 6px; }
-  .spectrum figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; }
-
-  /* Sections */
-  section { padding: 56px 0; border-top: 1px solid var(--rule); }
-  h2 { font-size: 28px; font-weight: 800; margin: 0 0 20px; }
-  h3 { font-size: 19px; font-weight: 700; margin: 0 0 4px; }
-
-  .areas { display: grid; gap: 28px; margin: 0; padding: 0; list-style: none; }
-  .areas li { border-left: 3px solid var(--accent); padding-left: 18px; }
-  .areas p { margin: 0; color: var(--muted); }
-
-  .pi { display: grid; grid-template-columns: 1fr; gap: 6px; }
-  .pi .role { color: var(--muted); margin: 0 0 12px; }
-  .pi p { margin: 0 0 12px; }
-
-  .join { background: var(--soft); padding: 28px; border-radius: 6px; }
-  .join p { margin: 0 0 12px; }
-  .join p:last-child { margin-bottom: 0; }
-
-  address { font-style: normal; }
-  footer { border-top: 1px solid var(--rule); padding: 28px 0 40px; font-size: 14px; color: var(--muted); }
-
-  @media (max-width: 560px) {
-    body { font-size: 16px; }
-    .hero { padding-top: 48px; }
-    .hero p.lead { font-size: 18px; }
-    .ticks span:nth-child(even) { visibility: hidden; }
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#141414">
+  <title>GC PhytoEnto Sensing &amp; AI Lab | University of Tennessee, Knoxville</title>
+  <meta name="description" content="The GC PhytoEnto Sensing & AI Lab at the University of Tennessee, Knoxville develops sensing and AI to study agroecosystems, plants, and beneficial and harmful organisms, including pests and pathogens.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
-<body>
-
-<nav class="nav" aria-label="Main">
-  <div class="wrap">
-    <a class="brand" href="#top">GC PhytoEnto Lab</a>
-    <ul>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#people">People</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#join">Join the lab</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<main id="top">
-  <header class="hero">
-    <div class="wrap">
-      <h1>GC PhytoEnto Sensing &amp; AI Lab</h1>
-      <p class="lead">Intelligent sensing for plant health and insect science, at the Department of Entomology and Plant Pathology, University of Tennessee, Knoxville.</p>
-
-      <figure class="spectrum" aria-label="Wavelength range from 400 to 1000 nanometers, from visible light into the near-infrared">
-        <div class="band"></div>
-        <div class="ticks" aria-hidden="true">
-          <span>400 nm</span><span>500</span><span>600</span><span>700</span><span>800</span><span>900</span><span>1000 nm</span>
-        </div>
-        <figcaption>Plants change how they reflect light, especially in the red edge and near-infrared, before stress or disease becomes visible. We measure those changes.</figcaption>
-      </figure>
-    </div>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="GC PhytoEnto Sensing &amp; AI Lab home">
+        <span class="brand-mark" aria-hidden="true">GC</span>
+        <span class="brand-name">PHYTOENTO SENSING &amp; AI <span>LAB</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+        <span class="sr-only">Toggle navigation</span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="primary-menu">
+        <li><a class="nav-link" data-page-link="home" href="index.html">Home</a></li>
+        <li><a class="nav-link" data-page-link="research" href="research.html">Research</a></li>
+        <li><a class="nav-link" data-page-link="people" href="people.html">People</a></li>
+        <li><a class="nav-link" data-page-link="publications" href="publications.html">Publications</a></li>
+        <li><a class="nav-link" data-page-link="news" href="news.html">News</a></li>
+        <li><a class="nav-link" data-page-link="funding" href="funding.html">Funding</a></li>
+        <li><a class="nav-link" data-page-link="join" href="join.html">Join us</a></li>
+        <li><a class="nav-link" data-page-link="collaboration" href="collaboration.html">Collaboration</a></li>
+        <li><a class="nav-contact" data-page-link="contact" href="contact.html">Contact <span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section id="about">
-    <div class="wrap">
-      <h2>About the lab</h2>
-      <p>Crop diseases and insect pests often do their damage before anyone can see it. Our lab develops sensing and artificial intelligence methods that detect crop stress, plant diseases, and insect pests early, at the pre-symptomatic stage, so growers and researchers can act sooner.</p>
-      <p>We combine hyperspectral imaging, chemical sensing, and deep learning, and work from controlled greenhouse studies to the field.</p>
-    </div>
-  </section>
-
-  <section id="research">
-    <div class="wrap">
-      <h2>Research</h2>
-      <ul class="areas">
-        <li>
-          <h3>Pre-symptomatic disease and stress detection</h3>
-          <p>Using hyperspectral imaging to find spectral signatures of infection and stress, such as freeze injury, before symptoms appear.</p>
-        </li>
-        <li>
-          <h3>Insect pest sensing</h3>
-          <p>Detecting insect pests and their activity through volatile organic compound (VOC) sensing and thermal imaging.</p>
-        </li>
-        <li>
-          <h3>AI for spectral data</h3>
-          <p>Building deep learning models that learn from spectral and spatial information together, and that hold up across environments, seasons, and sensors.</p>
-        </li>
-        <li>
-          <h3>From greenhouse to field</h3>
-          <p>Turning lab methods into practical tools, with automated imaging systems, UAV surveys, and edge devices for real-time detection.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="people">
-    <div class="wrap">
-      <h2>People</h2>
-      <div class="pi">
-        <h3>Sunil GC, Ph.D.</h3>
-        <p class="role">Principal Investigator<br>Assistant Professor of Sensing and Data Analytics</p>
-        <p>Sunil joined the University of Tennessee, Knoxville in November 2026. He earned his Ph.D. at North Dakota State University, where he also worked as a postdoctoral researcher with NDSU and USDA-ARS on hyperspectral imaging and deep learning for crop stress detection. Before moving into agricultural engineering, he worked as a software engineer.</p>
-        <p><a href="https://sunilgc7.github.io/">Personal website</a></p>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> UNIVERSITY OF TENNESSEE, KNOXVILLE</p>
+        <h1 id="hero-title">Sensing &amp; AI<br>for <span>agroecosystems.</span></h1>
+        <p class="hero-intro">We use sensing and artificial intelligence to study agroecosystems, including plants and beneficial and harmful organisms such as insect pests and pathogens.</p>
+        <div class="hero-actions">
+          <a class="button button-orange" href="research.html">Explore our research <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="#about">Discover the lab <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-bottom">
+          <p>DEPARTMENT OF ENTOMOLOGY<br>&amp; PLANT PATHOLOGY</p>
+          <p class="hero-note">Seeing the unseen.<br><span>Growing what’s next.</span></p>
+        </div>
       </div>
-      <p>We are building our team. Students and researchers will be listed here as they join.</p>
-    </div>
-  </section>
-
-  <section id="publications">
-    <div class="wrap">
-      <h2>Publications</h2>
-      <p>A full list of publications is available on <a href="https://sunilgc7.github.io/">Sunil GC's website</a>. Lab publications will be listed here as they are published.</p>
-    </div>
-  </section>
-
-  <section id="join">
-    <div class="wrap">
-      <h2>Join the lab</h2>
-      <div class="join">
-        <p>Open positions for graduate and undergraduate students will be posted here in the future.</p>
+      <div class="hero-art" role="img" aria-label="Illustration of a plant, an insect, and a small field-sensing robot with spectral bands from visible light to near-infrared">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+        <div class="plant-symbol"><span></span><span></span><span></span><span></span></div>
+        <svg class="hero-illustration" viewBox="0 0 570 570" aria-hidden="true">
+          <g class="insect-art" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M359 277 Q341 255 317 246 M359 277 Q382 256 405 250" fill="none" stroke="#ff8200" stroke-dasharray="3 5" stroke-width="1.5" opacity=".65"/>
+            <path d="M356 272 C345 263 344 253 353 256 C361 259 363 267 360 273 M363 272 C371 262 380 260 378 267 C376 273 370 277 364 275" fill="#ff8200" fill-opacity=".12" stroke="#ffd5a8" stroke-width="1.5"/>
+            <ellipse cx="360" cy="280" rx="5" ry="10" fill="#ff8200" stroke="#ff9a2f" stroke-width="1.5"/>
+            <circle cx="360" cy="269" r="4" fill="#141414" stroke="#ffd5a8" stroke-width="1.5"/>
+            <path d="M357 267 353 261 M363 267 367 261 M356 277 349 273 M355 281 347 282 M356 285 350 291 M364 277 371 273 M365 281 373 282 M364 285 370 291" fill="none" stroke="#ffd5a8" stroke-width="1.5"/>
+            <circle cx="358.5" cy="268" r=".8" fill="#ff8200"/><circle cx="361.5" cy="268" r=".8" fill="#ff8200"/>
+          </g>
+          <g class="robot-art" transform="translate(-18 0)" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M400 355 Q372 325 357 294" fill="none" stroke="#ff8200" stroke-dasharray="3 5" stroke-width="1.5" opacity=".7"/>
+            <path d="M377 409 H458" fill="none" stroke="#aaa9a1" stroke-width="1" opacity=".55"/>
+            <circle cx="393" cy="402" r="8" fill="#141414" stroke="#ff9a2f" stroke-width="2"/>
+            <circle cx="441" cy="402" r="8" fill="#141414" stroke="#ff9a2f" stroke-width="2"/>
+            <circle cx="393" cy="402" r="2" fill="#ffd5a8"/><circle cx="441" cy="402" r="2" fill="#ffd5a8"/>
+            <path d="M388 379 Q388 375 392 375 H443 Q447 375 447 379 V394 H388 Z" fill="#2b2b2b" stroke="#ff9a2f" stroke-width="2"/>
+            <path d="M397 375 402 368 H434 L440 375 M414 368 V350" fill="none" stroke="#ffd5a8" stroke-width="2"/>
+            <rect x="406" y="345" width="17" height="10" rx="2" fill="#2b2b2b" stroke="#ff8200" stroke-width="1.5"/>
+            <circle cx="415" cy="350" r="2.5" fill="#ff8200"/><circle cx="415" cy="350" r=".8" fill="#fff0dd"/>
+            <path d="M435 368 V357 L440 352 M435 361 H441" fill="none" stroke="#ffd5a8" stroke-width="1.5"/>
+            <path d="M396 385 H402 M407 385 H413" stroke="#ff8200" stroke-width="2"/>
+          </g>
+        </svg>
+        <div class="art-label"><span class="signal-dot"></span> LIGHT · LIFE · DATA</div>
+        <div class="art-spectrum"></div>
+        <div class="art-wavelength"><span>400 nm</span><span>VISIBLE</span><span>NEAR-INFRARED</span><span>1000 nm</span></div>
       </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll to about the lab"><span></span> SCROLL TO EXPLORE</a>
+    </section>
+
+    <section class="intro section-light" id="about">
+      <div class="container intro-layout">
+        <p class="section-index">ABOUT THE LAB</p>
+        <div>
+          <h2>Better signals.<br><span>Earlier answers.</span></h2>
+          <p class="intro-copy">Agroecosystems are shaped by interactions among plants and beneficial and harmful organisms, including insect pests and pathogens. Our lab develops sensing and AI methods to study these organisms and detect meaningful changes in their environment.</p>
+          <p class="intro-copy intro-copy-secondary">From controlled greenhouse studies to the field, we bring together RGB, multispectral, hyperspectral, and thermal imaging, acoustic sensing, and deep learning to better understand agricultural ecosystems.</p>
+        </div>
+        <div class="intro-side"><span class="side-rule"></span><p>FROM SIGNAL<br>TO SOLUTION</p><span class="side-arrow" aria-hidden="true">↘</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="index.html">GC <span>PHYTOENTO SENSING &amp; AI LAB</span></a>
+      <p>Department of Entomology and Plant Pathology<br>University of Tennessee Institute of Agriculture</p>
+      <span class="footer-note">KNOXVILLE, TENNESSEE · © <span id="year">2026</span></span>
     </div>
-  </section>
-
-  <section id="contact">
-    <div class="wrap">
-      <h2>Contact</h2>
-      <address>
-        Sunil GC, Ph.D.<br>
-        357 Agriculture and Natural Resources Building<br>
-        Department of Entomology and Plant Pathology<br>
-        The University of Tennessee, Knoxville, TN 37996<br>
-        <a href="mailto:sgc1@utk.edu">sgc1@utk.edu</a>
-      </address>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    GC PhytoEnto Sensing &amp; AI Lab, Department of Entomology and Plant Pathology, University of Tennessee Institute of Agriculture. Website in development.
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
